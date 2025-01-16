@@ -2,8 +2,12 @@ import { Container, Logo, Form } from "./style";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { TextButton } from "../../components/TextButton";
+import { useMediaQuery } from "react-responsive";
 
 export function SignUp() {
+
+    const isMobile = useMediaQuery({ query: "(max-width: 48em)" });
+
     return (
         <Container>
            <main>
@@ -13,8 +17,8 @@ export function SignUp() {
                 </Logo>
 
                 <Form>
-                    <h1>Crie sua conta</h1>
-
+                    {!isMobile && <h1>Crie sua conta</h1>}
+                    
                     <section className="input-wrapper">
                         <label htmlFor="name">Seu nome</label>
                         <Input type="text" id="name" placeholder="Maria da Silva" />

@@ -5,7 +5,7 @@ export const Container = styled.div`
     width: 100%;
     display: grid;
     place-items: center;
-    padding-inline: 10rem;
+    padding-inline: clamp(1rem, 2.5vw, 5rem);
 
     main {
         display: flex;
@@ -13,7 +13,14 @@ export const Container = styled.div`
         width: 100%;
         gap: 30rem;
         font-family: Roboto, sans-serif;
+
+        @media (max-width: 48rem) {
+            flex-direction: column;
+            gap: 5rem;
+            align-items: center;
+        }
     }
+   
 `;
 
 export const Logo = styled.div`
@@ -23,7 +30,7 @@ export const Logo = styled.div`
     align-self: center;
 
     h2{
-        font-size: 4.2rem;
+        font-size: clamp(3.7rem, 2vw, 4.2rem);
         font-weight: 700;
         line-height: normal;
     }
@@ -31,12 +38,18 @@ export const Logo = styled.div`
 
 export const Form = styled.form`
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
-    padding: 6.4rem;
+    padding: clamp(5rem, 3vw, 6.4rem);
     border-radius: 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
     width: 47.6rem;
+
+    @media (max-width: 48rem) {
+        background: none;
+        width: 31.6rem;
+        padding: initial;
+    }
 
     h1{
         text-align: center;
@@ -49,7 +62,9 @@ export const Form = styled.form`
     .input-wrapper label{
         color: ${({ theme }) => theme.COLORS.LIGHT_400};
         line-height: 100%; 
-        margin-bottom: .8rem;
+        margin-bottom: 1rem;
         display: inline-block;
     }
+
+
 `;

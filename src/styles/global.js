@@ -30,4 +30,5 @@ export const GlobalStyle = createGlobalStyle`
         transition: filter 0.2s;
     }
 
+
 `;
