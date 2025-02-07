@@ -1,11 +1,14 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 import { api } from "../resources/api";
+import PropTypes from "prop-types";
+
 
 const AuthContext = createContext({})
 
 function AuthProvider({ children }) {
 
     const [user, setUser] = useState(null);
+   
 
     async function signIn({email, password}){
         try {
@@ -14,7 +17,7 @@ function AuthProvider({ children }) {
                 password
             });
 
-            console.log(response.data.user);
+            localStorage.setItem("@foodexplorer:user", JSON.stringify(response.data.user));
 
            setUser(response.data.user);
         } catch (error) {
@@ -48,11 +51,21 @@ function AuthProvider({ children }) {
         }
     }
 
+
+    useEffect(() => { 
+        const user = JSON.parse(localStorage.getItem("@foodexplorer:user"));
+        setUser(user);
+    }, []);
+
     return (
         <AuthContext.Provider value={{signIn, signUp, user}}>
             {children}
         </AuthContext.Provider>
     )
+};
+
+AuthProvider.propTypes = {
+    children: PropTypes.node.isRequired
 };
 
 export { AuthProvider, AuthContext };
