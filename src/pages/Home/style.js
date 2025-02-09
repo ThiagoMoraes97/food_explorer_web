@@ -9,9 +9,12 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     padding-inline: 12rem;
-    margin-top: 15rem;
+    margin: 18rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
 
-    > section { 
+    > section.banner { 
         width: 123rem;
         height: 26rem;
         background: ${({theme}) => theme.COLORS.GRADIENTS_200};
@@ -47,4 +50,16 @@ export const Main = styled.main`
             }
         }
     }
+
+    .swiper-button-prev {
+        color: ${({theme}) => theme.COLORS.LIGHT_300};
+        transform: translateX(2rem);
+    }
+
+    .swiper-button-next {
+        color: ${({theme}) => theme.COLORS.LIGHT_300};
+        transform: translateX(-2rem);
+    }
+
+    
 `;
