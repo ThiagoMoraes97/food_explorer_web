@@ -8,6 +8,11 @@ export const Container = styled.button`
     border: none;
     border-radius: 0.5rem;
 
+    font-family: Poppins;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,5 +20,7 @@ export const Container = styled.button`
 
     svg{
         color: inherit;
+        width: 3.2rem;
+        height: 3.2rem;
     }
 `;

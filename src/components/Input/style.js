@@ -17,6 +17,7 @@ export const Container = styled.div`
         border-radius: inherit;
         background: none;
 
+
         color: ${({ theme }) => theme.COLORS.LIGHT_500};
         font-family: Roboto, sans-serif;
         line-height: 100%;

@@ -51,6 +51,11 @@ function AuthProvider({ children }) {
         }
     }
 
+    async function signOut(){
+        localStorage.removeItem("@foodexplorer:user");
+        setUser(null);
+    }
+
 
     useEffect(() => { 
         const user = JSON.parse(localStorage.getItem("@foodexplorer:user"));
@@ -58,7 +63,7 @@ function AuthProvider({ children }) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{signIn, signUp, user}}>
+        <AuthContext.Provider value={{signIn, signUp, signOut, user}}>
             {children}
         </AuthContext.Provider>
     )
