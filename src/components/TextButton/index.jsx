@@ -1,4 +1,5 @@
 import { Container } from "./style";
+import PropTypes from 'prop-types';
 
 export function TextButton({ title, ...rest }) {
     return (
@@ -6,4 +7,8 @@ export function TextButton({ title, ...rest }) {
             {title}
         </Container>
     )
-}
+};
+
+TextButton.propTypes = {
+    title: PropTypes.string.isRequired, 
+};

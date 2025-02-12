@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
     width: 100%;
-    padding-inline: 12rem;
     padding-block: 2.4rem;
     background-color: ${({theme}) => theme.COLORS.DARK_600};
 
@@ -11,9 +10,13 @@ export const Container = styled.footer`
     font-size: 1.4rem;
     line-height: 160%;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   > .footer_content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 120rem;
+        margin-inline: auto;
+    }
 `;
 
 export const Logo = styled.div`

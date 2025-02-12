@@ -24,6 +24,11 @@ export const Container = styled.div`
         top: 1.6rem;
     }
 
+    > img{
+        width: 17.6rem;
+        height: 17.6rem;
+    }
+
     > h2{
         color: ${({theme}) => theme.COLORS.LIGHT_300};
         text-align: center;
@@ -48,16 +53,20 @@ export const Container = styled.div`
     }
 
     > .add_dish{
-      display: flex;
-      gap: 1.6rem;
-      align-items: center;
+        display: flex;
+        gap: 1.6rem;
+        align-items: center;
 
       > .add_button{
             display: flex;
             align-items: center;
             gap: 1.4rem;
             color: ${({theme}) => theme.COLORS.LIGHT_300};
+            
             font-size: 2rem;
+            font-family: Roboto;
+            font-weight: 700;
+            line-height: 160%;
 
             button{
                 background: none;
@@ -77,6 +86,11 @@ export const Container = styled.div`
             border: none;
             background: ${({theme}) => theme.COLORS.TOMATO_100};
             color: ${({theme}) => theme.COLORS.LIGHT_100};
+
+            font-family: Poppins;
+            font-weight: 500;
+            line-height: 2.4rem;
+            font-size: 1.4rem;
         }
     }
 `;

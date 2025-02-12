@@ -6,6 +6,7 @@ import { IoSearch } from "react-icons/io5";
 import orderButtonSvg from "../../assets/orderButon.svg";
 import { useAuth } from "../../hooks/useAuth";
 import { useState } from "react";
+import logoSvg from "/logo.svg";
 
 export function Header(){
 
@@ -16,7 +17,7 @@ export function Header(){
         <Container>
             <div className="header_content">
                 <Logo>
-                    <img src="./logo.svg" alt="Logo do Food Explorer" />
+                    <img src={logoSvg} alt="Logo do Food Explorer" />
                     <div className="logo_info">
                         <h2>food explorer</h2>
                         {user?.role === "admin" ? <small>admin</small> : null}
